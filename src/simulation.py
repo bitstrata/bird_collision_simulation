@@ -1,5 +1,5 @@
 from .agent import Agent
-from .turbine import TurbineManager
+from .turbine_manager import TurbineManager
 from .parallel import step_parallel
 from .bayesian import bayesian_update
 
