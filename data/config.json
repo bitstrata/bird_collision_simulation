@@ -1,0 +1,9 @@
+{
+  "wind_direction": 45,
+  "num_agents": 500,
+  "initial_energy": 100,
+  "collision_zone_buffer": 5.0,
+  "turbine_file": "data/turbines.geojson",
+  "prior_collision_probability": 0.05,
+  "random_seed": 42
+}
