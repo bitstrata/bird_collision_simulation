@@ -1,6 +1,6 @@
 import geopandas as gpd
 from shapely.geometry import Point
-from src.agents import Agent
+from src.agent import Agent
 from src.parallel import step_parallel
 from src.bayesian import bayesian_update
 

@@ -1,5 +1,5 @@
 import pytest
-from src.agents import Agent
+from src.agent import Agent
 
 def test_agent_moves_and_loses_energy():
     agent = Agent(pos=(0,0), energy=10)
