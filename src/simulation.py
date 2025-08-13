@@ -5,16 +5,18 @@ from .bayesian import bayesian_update
 
 class Simulation:
     def __init__(self, config):
+        self.config = config
         self.wind_direction = config.get("wind_direction")
-        self.prior_prob = config.get("prior_collision_probability")
+        self.prior_prob = config.get("prior_collision_probability", 0.05)
         self.num_agents = config.get("num_agents")
         self.initial_energy = config.get("initial_energy")
 
-        self.turbines = TurbineManager(
-            config.get("turbine_file"),
-            config.get("collision_zone_buffer")
-        )
-        self.agents = [Agent((0, 0), self.initial_energy) for _ in range(self.num_agents)]
+        self.turbines = TurbineManager(config)
+
+        self.agents = [
+            Agent((0, 0), self.initial_energy)
+            for _ in range(self.num_agents)
+        ]
 
     def step(self):
         self.agents, self.prior_prob = step_parallel(

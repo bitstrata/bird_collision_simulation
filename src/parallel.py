@@ -17,7 +17,12 @@ def agent_worker(agent, turbine_geoms, turbine_sindex, wind_direction):
 def step_parallel(agents, turbine_manager, wind_direction, prior_prob, bayesian_func):
     n_jobs = max(1, multiprocessing.cpu_count() - 1)
     results = Parallel(n_jobs=n_jobs, backend="loky")(
-        delayed(agent_worker)(agent, turbine_manager.geoms, turbine_manager.sindex, wind_direction)
+        delayed(agent_worker)(
+            agent,
+            turbine_manager.geoms,
+            turbine_manager.sindex,
+            wind_direction
+        )
         for agent in agents
     )
     updated_agents, hits = zip(*results)

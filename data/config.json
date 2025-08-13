@@ -1,14 +1,25 @@
 {
-    "wind_direction": 45,
-    "num_agents": 500,
-    "initial_energy": 100,
-    "collision_zone_buffer": 5.0,
-    "turbine_file": null,
+    "turbine_layout": "optimized",
     "num_turbines": 12,
-    "turbine_layout": "grid",
-    "grid_spacing": 15,
-    "farm_width": 3,
-    "farm_height": 4,
-    "prior_collision_probability": 0.05,
-    "random_seed": 42
+    "x_range": [
+        0,
+        100
+    ],
+    "y_range": [
+        0,
+        100
+    ],
+    "min_turbine_spacing": 15.0,
+    "ga_population_size": 60,
+    "ga_generations": 150,
+    "ga_tournament_k": 3,
+    "ga_crossover_rate": 0.9,
+    "ga_mutation_rate": 0.3,
+    "ga_mutation_std": 1.5,
+    "ga_elite_fraction": 0.1,
+    "wind_direction": 90,
+    "collision_zone_buffer": 5.0,
+    "random_seed": 42,
+    "num_agents": 500,
+    "initial_energy": 100
 }
